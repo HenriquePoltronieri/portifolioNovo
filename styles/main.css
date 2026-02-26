@@ -55,22 +55,6 @@ ul {
     list-style: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===========================
     SCROLL INDICATOR
    =========================== */
@@ -85,25 +69,6 @@ ul {
     transition: width 0.1s;
     box-shadow: 0 0 12px var(--purple-glow);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===========================
     NAV
@@ -193,25 +158,6 @@ ul {
     transition: var(--transition);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===========================
     CONTAINER
    =========================== */
@@ -220,17 +166,6 @@ ul {
     margin: 0 auto;
     padding: 0 5%;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===========================
     SECTION COMMONS
@@ -270,15 +205,6 @@ section {
 .accent {
     color: var(--purple-light);
 }
-
-
-
-
-
-
-
-
-
 
 /* ===========================
     BUTTONS
@@ -342,23 +268,6 @@ section {
     gap: 10px;
     opacity: 0.85;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===========================
     HERO
@@ -638,23 +547,6 @@ section {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===========================
     SKILLS
    =========================== */
@@ -746,24 +638,6 @@ section {
     color: var(--purple-light);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===========================
     PROJECTS
    =========================== */
@@ -809,6 +683,7 @@ section {
     overflow: hidden;
     transition: all var(--transition);
     opacity: 1;
+    cursor: pointer;
 }
 
 .project-card.hidden {
@@ -830,12 +705,29 @@ section {
     justify-content: center;
 }
 
-.project-img--flutter  { background: linear-gradient(135deg, #012e4a, #015073, #0277a3); }
-.project-img--kotlin   { background: linear-gradient(135deg, #1a0a2e, #3b0f6e, #6a23b8); }
-.project-img--swift    { background: linear-gradient(135deg, #3a0e00, #6b1a00, #a02800); }
-.project-img--java     { background: linear-gradient(135deg, #2e1600, #5a2d00, #8a4500); }
-.project-img--python   { background: linear-gradient(135deg, #1a1a00, #343400, #565600); }
-.project-img--csharp   { background: linear-gradient(135deg, #1a0030, #350060, #5a009e); }
+.project-img--flutter {
+    background: linear-gradient(135deg, #012e4a, #015073, #0277a3);
+}
+
+.project-img--kotlin {
+    background: linear-gradient(135deg, #1a0a2e, #3b0f6e, #6a23b8);
+}
+
+.project-img--swift {
+    background: linear-gradient(135deg, #3a0e00, #6b1a00, #a02800);
+}
+
+.project-img--java {
+    background: linear-gradient(135deg, #2e1600, #5a2d00, #8a4500);
+}
+
+.project-img--python {
+    background: linear-gradient(135deg, #1a1a00, #343400, #565600);
+}
+
+.project-img--csharp {
+    background: linear-gradient(135deg, #1a0030, #350060, #5a009e);
+}
 
 .project-lang-icon {
     width: 56px;
@@ -880,18 +772,77 @@ section {
     text-transform: uppercase;
 }
 
-.tag-flutter   { background: rgba(84, 197, 248, 0.1); color: #54c5f8; border: 1px solid rgba(84,197,248,0.3); }
-.tag-dart      { background: rgba(0, 180, 216, 0.1); color: #00b4d8; border: 1px solid rgba(0,180,216,0.25); }
-.tag-kotlin    { background: rgba(168, 78, 255, 0.1); color: #b06ef3; border: 1px solid rgba(168,78,255,0.3); }
-.tag-android   { background: rgba(61, 220, 132, 0.1); color: #3ddc84; border: 1px solid rgba(61,220,132,0.25); }
-.tag-swift     { background: rgba(249, 88, 50, 0.1); color: #f95832; border: 1px solid rgba(249,88,50,0.3); }
-.tag-ios       { background: rgba(200, 200, 200, 0.1); color: #c8c8c8; border: 1px solid rgba(200,200,200,0.2); }
-.tag-java      { background: rgba(249, 115, 22, 0.1); color: #fb923c; border: 1px solid rgba(249,115,22,0.25); }
-.tag-spring    { background: rgba(109, 179, 63, 0.1); color: #6db33f; border: 1px solid rgba(109,179,63,0.25); }
-.tag-python    { background: rgba(255, 212, 59, 0.1); color: #ffd43b; border: 1px solid rgba(255,212,59,0.25); }
-.tag-api       { background: rgba(52, 211, 153, 0.1); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
-.tag-csharp    { background: rgba(149, 0, 255, 0.1); color: #b869ff; border: 1px solid rgba(149,0,255,0.3); }
-.tag-dotnet    { background: rgba(92, 45, 145, 0.1); color: #9b59b6; border: 1px solid rgba(92,45,145,0.25); }
+.tag-flutter {
+    background: rgba(84, 197, 248, 0.1);
+    color: #54c5f8;
+    border: 1px solid rgba(84, 197, 248, 0.3);
+}
+
+.tag-dart {
+    background: rgba(0, 180, 216, 0.1);
+    color: #00b4d8;
+    border: 1px solid rgba(0, 180, 216, 0.25);
+}
+
+.tag-kotlin {
+    background: rgba(168, 78, 255, 0.1);
+    color: #b06ef3;
+    border: 1px solid rgba(168, 78, 255, 0.3);
+}
+
+.tag-android {
+    background: rgba(61, 220, 132, 0.1);
+    color: #3ddc84;
+    border: 1px solid rgba(61, 220, 132, 0.25);
+}
+
+.tag-swift {
+    background: rgba(249, 88, 50, 0.1);
+    color: #f95832;
+    border: 1px solid rgba(249, 88, 50, 0.3);
+}
+
+.tag-ios {
+    background: rgba(200, 200, 200, 0.1);
+    color: #c8c8c8;
+    border: 1px solid rgba(200, 200, 200, 0.2);
+}
+
+.tag-java {
+    background: rgba(249, 115, 22, 0.1);
+    color: #fb923c;
+    border: 1px solid rgba(249, 115, 22, 0.25);
+}
+
+.tag-spring {
+    background: rgba(109, 179, 63, 0.1);
+    color: #6db33f;
+    border: 1px solid rgba(109, 179, 63, 0.25);
+}
+
+.tag-python {
+    background: rgba(255, 212, 59, 0.1);
+    color: #ffd43b;
+    border: 1px solid rgba(255, 212, 59, 0.25);
+}
+
+.tag-api {
+    background: rgba(52, 211, 153, 0.1);
+    color: #34d399;
+    border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.tag-csharp {
+    background: rgba(149, 0, 255, 0.1);
+    color: #b869ff;
+    border: 1px solid rgba(149, 0, 255, 0.3);
+}
+
+.tag-dotnet {
+    background: rgba(92, 45, 145, 0.1);
+    color: #9b59b6;
+    border: 1px solid rgba(92, 45, 145, 0.25);
+}
 
 .project-body h3 {
     font-family: 'Syne', sans-serif;
@@ -906,31 +857,6 @@ section {
     color: var(--text-muted);
     line-height: 1.6;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===========================
     COURSES
@@ -978,8 +904,13 @@ section {
     letter-spacing: -0.03em;
 }
 
-.cotemig-brand  {color: #25b301;}
-.alura-brand    {color: #00c8e0;}
+.cotemig-brand {
+    color: #25b301;
+}
+
+.alura-brand {
+    color: #00c8e0;
+}
 
 .course-list li {
     font-size: 0.82rem;
@@ -1001,33 +932,6 @@ section {
 .course-list li:hover {
     color: var(--text);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===========================
     CONTACT
@@ -1167,24 +1071,6 @@ section {
     animation: fade-up 0.4s ease;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===========================
     FOOTER
    =========================== */
@@ -1218,22 +1104,6 @@ footer p {
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.2);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===========================
     RESPONSIVE
@@ -1336,5 +1206,310 @@ footer p {
 
     section {
         padding: 80px 0;
+    }
+}
+
+
+/* ===================================================
+   PROJECT MODAL
+   =================================================== */
+
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(5, 5, 8, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Modal box */
+.modal-box {
+    position: relative;
+    background: #16161c;
+    border: 1px solid var(--border-purple);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(124, 58, 237, 0.15);
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-purple) transparent;
+}
+
+.modal-overlay.open .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+.modal-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal-box::-webkit-scrollbar-thumb {
+    background: var(--border-purple);
+    border-radius: 4px;
+}
+
+/* Close button */
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all var(--transition);
+}
+
+.modal-close svg {
+    width: 16px;
+    height: 16px;
+}
+
+.modal-close:hover {
+    background: rgba(124, 58, 237, 0.2);
+    border-color: var(--border-purple);
+    color: var(--text);
+    transform: rotate(90deg);
+}
+
+/* Banner */
+.modal-banner {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.modal-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, #16161c 100%);
+}
+
+.modal-banner-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+    position: relative;
+    z-index: 1;
+}
+
+.modal-banner-label {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.06em;
+    z-index: 2;
+}
+
+/* Content area */
+.modal-content {
+    padding: 8px 28px 32px;
+}
+
+/* Status row */
+.modal-status-row {
+    margin-bottom: 12px;
+}
+
+.modal-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+}
+
+.modal-status.status-done {
+    background: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.25);
+}
+
+.modal-status.status-done::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 6px #4ade80;
+}
+
+.modal-status.status-wip {
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.25);
+}
+
+.modal-status.status-wip::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fbbf24;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.4);
+    }
+}
+
+/* Title */
+.modal-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+/* Description */
+.modal-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 24px;
+}
+
+/* Section label */
+.modal-section {
+    margin-bottom: 24px;
+}
+
+.modal-section-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+/* Techs chips */
+.modal-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.modal-tech-chip {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 5px 13px;
+    border-radius: 999px;
+    background: var(--purple-subtle);
+    border: 1px solid var(--border-purple);
+    color: var(--purple-light);
+    transition: all var(--transition);
+}
+
+.modal-tech-chip:hover {
+    background: rgba(124, 58, 237, 0.18);
+    border-color: var(--purple);
+}
+
+/* Action buttons */
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.modal-actions .btn {
+    flex: 1;
+    justify-content: center;
+    min-width: 140px;
+}
+
+/* Divider line inside modal */
+.modal-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+}
+
+/* Responsive modal */
+@media (max-width: 640px) {
+    .modal-box {
+        border-radius: 16px;
+    }
+
+    .modal-banner {
+        height: 160px;
+    }
+
+    .modal-content {
+        padding: 8px 20px 28px;
+    }
+
+    .modal-title {
+        font-size: 1.25rem;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .btn {
+        min-width: unset;
     }
 }
