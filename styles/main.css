@@ -1513,3 +1513,9 @@ footer p {
         min-width: unset;
     }
 }
+
+@media (min-width: 1025px) {
+    * {
+        cursor: none !important;
+    }
+}
