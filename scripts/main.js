@@ -1,6 +1,4 @@
-/* ===========================
-    SCROLL PROGRESS INDICATOR
-   =========================== */
+// Scroll Progress
 const scrollIndicator = document.getElementById('scroll-indicator');
 
 function updateScrollIndicator() {
@@ -10,9 +8,7 @@ function updateScrollIndicator() {
     scrollIndicator.style.width = progress + '%';
 }
 
-/* ===========================
-    NAVBAR SCROLL EFFECT
-   =========================== */
+// Navbar
 const navbar = document.getElementById('navbar');
 
 function updateNavbar() {
@@ -23,9 +19,7 @@ function updateNavbar() {
     }
 }
 
-/* ===========================
-    MOBILE HAMBURGER MENU
-   =========================== */
+// Menu Mobile
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
@@ -39,9 +33,7 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
-/* ===========================
-    INTERSECTION OBSERVER — FADE IN
-   =========================== */
+// Fade in ao rolar
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -63,9 +55,7 @@ document.querySelectorAll('.skill-card, .course-card').forEach(el => {
     observer.observe(el);
 });
 
-/* ===========================
-    PROJECT FILTER
-   =========================== */
+// Filtro de projetos
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
@@ -90,9 +80,7 @@ filterBtns.forEach(btn => {
     });
 });
 
-/* ===========================
-    CONTACT FORM SUBMIT
-   =========================== */
+// Formulário de contato
 const contactForm = document.getElementById('contact-form');
 const formSuccess = document.getElementById('form-success');
 
@@ -117,9 +105,7 @@ if (contactForm) {
     });
 }
 
-/* ===========================
-    SMOOTH ACTIVE NAV HIGHLIGHT
-   =========================== */
+// Destaque do nav ativo
 const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
@@ -140,49 +126,46 @@ function highlightActiveNav() {
     });
 }
 
-/* ===========================
-    SCROLL EVENT LISTENER
-   =========================== */
+// Scroll listener
 window.addEventListener('scroll', () => {
     updateScrollIndicator();
     updateNavbar();
     highlightActiveNav();
 }, { passive: true });
 
-/* ===========================
-    CURSOR GLOW EFFECT (desktop)
-   =========================== */
+// Cursor customizado
 if (window.innerWidth > 1024) {
-    const glow = document.createElement('div');
-    glow.style.cssText = `
-    position: fixed;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    background: radial-gradient(circle, rgba(124,58,237,0.06) 0%, transparent 70%);
-    transform: translate(-50%, -50%);
-    transition: left 0.5s ease, top 0.5s ease;
-    will-change: left, top;
+    const cursor = document.createElement('div');
+    cursor.style.cssText = `
+        position: fixed;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        background: rgba(124, 58, 237, 0.85);
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease;
+        will-change: left, top;
     `;
-    document.body.appendChild(glow);
+    document.body.appendChild(cursor);
 
     document.addEventListener('mousemove', (e) => {
-        glow.style.left = e.clientX + 'px';
-        glow.style.top = e.clientY + 'px';
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mousedown', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(0.7)';
+    });
+    document.addEventListener('mouseup', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
     });
 }
 
-/* ===========================
-    INITIAL CALL
-   =========================== */
 updateNavbar();
 
-
-/* ===================================================
-   PROJECT MODAL
-   =================================================== */
+// Modal de projetos
 const modalOverlay = document.getElementById('modal-overlay');
 const modalClose = document.getElementById('modal-close');
 const modalBanner = document.getElementById('modal-banner');
@@ -195,7 +178,6 @@ const modalTechs = document.getElementById('modal-techs');
 const modalGithub = document.getElementById('modal-github');
 const modalDemo = document.getElementById('modal-demo');
 
-// Map of banner background classes per project image class
 const bannerClassMap = {
     'project-img--flutter': 'project-img--flutter',
     'project-img--kotlin': 'project-img--kotlin',
@@ -206,7 +188,6 @@ const bannerClassMap = {
 };
 
 function openModal(card) {
-    // Collect data from card's data attributes
     const title = card.dataset.title || '';
     const desc = card.dataset.desc || '';
     const techsRaw = card.dataset.techs || '';
@@ -217,13 +198,9 @@ function openModal(card) {
     const imgClass = card.dataset.imgClass || '';
     const label = card.querySelector('.project-img-label')?.textContent || '';
 
-    // Title
     modalTitle.textContent = title;
-
-    // Description
     modalDesc.textContent = desc;
 
-    // Status badge
     modalStatus.textContent = status;
     modalStatus.className = 'modal-status';
     if (status.toLowerCase().includes('desenvolvimento')) {
@@ -232,19 +209,15 @@ function openModal(card) {
         modalStatus.classList.add('status-done');
     }
 
-    // Banner background
-    // Remove previous banner classes
     Object.values(bannerClassMap).forEach(c => modalBanner.classList.remove(c));
     if (imgClass && bannerClassMap[imgClass]) {
         modalBanner.classList.add(bannerClassMap[imgClass]);
     }
 
-    // Banner icon & label
     modalBannerIcon.src = langIcon;
     modalBannerIcon.alt = title;
     modalBannerLabel.textContent = label;
 
-    // Technologies chips
     modalTechs.innerHTML = '';
     techsRaw.split(',').forEach(tech => {
         const t = tech.trim();
@@ -255,19 +228,14 @@ function openModal(card) {
         modalTechs.appendChild(chip);
     });
 
-    // Links
     modalGithub.href = github;
     modalDemo.href = demo;
-
-    // Always show both buttons
     modalGithub.style.display = 'inline-flex';
     modalDemo.style.display = 'inline-flex';
 
-    // Open overlay
     modalOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
 
-    // Focus trap: focus close button
     setTimeout(() => modalClose.focus(), 50);
 }
 
@@ -276,20 +244,16 @@ function closeModal() {
     document.body.style.overflow = '';
 }
 
-// Open on project card click
 projectCards.forEach(card => {
     card.addEventListener('click', () => openModal(card));
 });
 
-// Close on button
 modalClose.addEventListener('click', closeModal);
 
-// Close on overlay backdrop click (outside modal-box)
 modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) closeModal();
 });
 
-// Close on Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
         closeModal();
