@@ -1514,8 +1514,131 @@ footer p {
     }
 }
 
-@media (min-width: 1025px) {
-    * {
-        cursor: none !important;
+/* ===========================
+   ABOUT (seção nova)
+   =========================== */
+#about {
+    background: #0f0f13;
+}
+
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-left .section-tag {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.about-left .section-title {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+.about-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+.about-text strong {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.about-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+}
+
+.about-badge {
+    font-size: 0.78rem;
+    font-weight: 400;
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: var(--purple-subtle);
+    border: 1px solid var(--border-purple);
+    color: var(--purple-light);
+}
+
+.about-timeline {
+    position: relative;
+    padding-left: 24px;
+}
+
+.about-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--purple), transparent);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -28px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--purple);
+    box-shadow: 0 0 10px var(--purple-glow);
+}
+
+.timeline-year {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--purple-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.timeline-body h4 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.timeline-body p {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 860px) {
+    .about-wrapper {
+        grid-template-columns: 1fr;
+        gap: 44px;
+    }
+
+    .about-left .section-title {
+        text-align: center;
+    }
+
+    .about-left .section-tag {
+        text-align: center;
+    }
+
+    .about-badges {
+        justify-content: center;
     }
 }
